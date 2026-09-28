@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Country API - Country</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="primarycssfile.css">
+    <link rel="stylesheet" href="country-detailed.css">
+    <script src="script-country-details.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="navigation--container">
+            <nav class="container--1440px --d-flex --d-flex--align-center --d-flex--space-between">
+                <h1 class="nav__title"><a href="/index.html">Where in the world?</a></h1>
+                <div class="--d-flex --d-flex--align-center nav__theme-changer">
+                    <i class="nav__theme-changer-icon fa-regular fa-moon"></i>
+                    <p class="nav__theme-changer-text">Dark Mode</p>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container--1440px">
+        <div>
+            <a class="back-button btn" onclick="history.back()">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back</a>
+        </div>
+        <div class="country-details --d-flex --d-flex--space-between">
+            <div class="country-details__flag">
+                <img class="country-details__flag-image" src="" alt="">
+            </div>
+            <div class="country-details__info">
+                <h1 class="country-details__info-name"></h1>
+                <div class="country-details__info-lists --d-flex --d-flex--space-between">
+                    <div>
+                        <p>Native Name:&nbsp;<span class="country-details__native-name"></span></p>
+                        <p>population:&nbsp;<span class="country-details__population"></span></p>
+                        <p>Region:&nbsp;<span class="country-details__region"></span></p>
+                        <p>Sub Region:&nbsp;<span class="country-details__sub-region"></span></p>
+                        <p>Capital:&nbsp;<span class="country-details__capital"></span></p>
+                    </div>
+                    <div>
+                        <p>Top Level Domain:&nbsp;<span class="country-details__top-level-domain"></span></p>
+                        <p>Currencies:&nbsp;<span class="country-details__currency"><b></b>
+                            </span></p>
+                        <p>Languages:&nbsp;<span class="country-details__languages"></span></p>
+                    </div>
+                </div>
+                <div class="country-details__borders --d-flex --d-flex--wrap ">
+                    <p>Border Countries:</p>
+                    <div class="country-details__borders-buttons-list --d-flex --d-flex--wrap">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

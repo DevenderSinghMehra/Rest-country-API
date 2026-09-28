@@ -1,0 +1,158 @@
+think about how to add a focus and hover effect just when the user come at the search bar not particularly at the button(by the way button i already know) . 
+get your font sizes in check man before you put any padding.(if not then repeat)
+do something so the background is slightly blured and the app run smoothly and make sure toh set logic in a way that the data of countries gets updated after a day so user stay connected to the present data.
+
+see when i am trying to use tab or arrow down etc on suggestion list or filter toggle list i am not able to so kindly fix it. 
+vision for search bar:-
+only 10 suggestion should appear(done)
+whenever a user clicks on an suggestion it should take him to the detailed view of that country.(done)
+with down arraw key use should be taken to a suggestion ,like it happens in google search.
+and make the nav bar sticky with the ability of turning transparent, when the page is scrolled down.(i mean background turns transparent.)
+when the search bar turns on everything in the background should turns blur only search bar should be the main focus same with tooglle or when user hover over an card.
+do some work with the scroll bar man.
+
+make sure country-details ka page 100vh me lag bhag lag bhag a jaye.
+and when an non existent value is searched the filter toggle is not getting turned off, like it getting turned off when there are match countries after submit.
+set an min-height in vh for country cards container so that when nothing loads pagination bar does not go up and stayed there.
+remove the toggle while changing the page number to prevent error.
+when selecting the page the countries are getting perfectly rendered with the scroll bar is at bottom only it should go up to top then it will look good.
+
+---imp---see there is a problem i have a color transition on search bar suggestions and when it is on and i am changing the mode from dark to light ,  iam seeing a transition only on my options color as rest is getting changed without any transition.(anyway i realized when i will set any outside touch mean close the suggestion bar then it is not going to be a problem as it is not there so what can happen no one can see those extra color change. )
+, why not add a code where you can search a country by city name also or capital name as i have a api only for that.
+
+make sure it the pagination number does not works for the current page , like when on page no. 1 it should not allow to or run pagination page render for the current page as it is use less.
+
+--------
+//do something like when the user go back to home inputValue = '' so that purana submited value nahi rahe toh 2 hi tarike hai home me jane ke ya toh '' dal do ya toh click the home tab. ye click the kuch karna padhega nahi toh '' vale ke hisab se hi logic likh deta hu.
+
+//most part is done but when the user selects  toogle get back on his home page with the toggle on the effect of toggle goes away.
+
+-------------------
+search bar or filter toggle ki height same nahi hai make it similar ok.(task --due--)
+make the nav bar sticky
+
+see with pagination make sure that after mage page option has been hit next options dis appear or cannot be selected, and do the same with previous.
+
+
+learnings:-
+people does not use 
+<select name="fdffdfdd" id="fdf"></select>
+because there is less modification opition with it to create drop down menu.
+
+margin-inline: auto; ==> margin in the left and right direction "auto" as happens in the case of padding.-- or margin-block iska ulta hota hai means top and bottom.
+
+pointer-events:none;
+pointer-events:auto;
+i learned about this properties while making the drop-down menu,what this property does is does not allow the user to perform any pointer events, and make the block feel non-existent.it is necessary as i would have generated a problem because at the 0 opacity also user could have selected the option, display none could have also prevented it but transitions property does not work when display properties are getting updated or changed.  
+
+try your best making the website ,seo friendly.
+
+margin: 0 auto; does no works on display:inline-block; elements use text-align: center; for them but with block element margin auto works fine.
+
+just put the flex-wrap: wrap; and the items are not going to get squeezed same goes for align-items which is by default on stretch,change it also and get the real size of the item.
+
+for each is used with array.
+toLocaleString("en-IN") automatically inserts commas according to the Indian system.
+
+
+with ctrl+shift+s ==> you can take a screen shot inside brave it a option given by browser.
+
+after sometime of analysis i figured out that sirs code was better in terms of scalability as i made p = 300 weight text works but when it is big project and multiple peoples are working on it , it creates confusion where as he uses <b> tag to make it bold, and i put everything in the same style file where as he creates a new one for the detailed page again scalability gets taken care of.  
+
+whenever coding for with a specific data that varies at different points always check the code with maximum possibility so the code does not breaks.
+
+do not discount on using your common sense.
+
+localStorage only stores strings in it and that is why before adding object and array in local storage i have to stringify it and later parse it back when retrieving it and stringify= converting a non-string value into string.
+
+Wherever there is a single click, do not use classList.toggle; use it where multiple clicks are expected.
+WebKit is a browser engine used to render web page.
+
+by sir:-
+ek design ko bannane ke liye sirf css hi nahi chahiye hota hai hamme html ko bhi ache se structure karna padhta hai.
+
+anchor tag ek inline element hota hai.
+
+color: inherit.// jo bhi parent ka color hai vo le lo good trick.
+
+use display:inline-block;
+ if you want to place item or cards besides each other and of course when you are not interested in using 
+ display:flex;.
+
+ koi bhi html tag ek object hota hai js ke andr.
+
+ src===> source attribute.
+
+ indentation ka matlab alignment.
+
+ use optional chaining where you can, like use country.name?.capital than country.name.capital.
+
+div.alpha >> likhne ki koi jarurt nahi hai agr .alpha bhi likht de toh bhi div ban jata hai.
+
+good trick.
+<span class="back-button" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left"></i>&nbsp; Back
+        </span>
+
+
+useful when you are converting array into a string .join(', ')//play with it to know what it does.
+there are 2 types of loading effect shimmer and skeleton.
+
+tittle and title is different man , tittle= dot of i or j etch, whereas title = used to refer to the name of an creative work a movie , book.
+
+ task
+ ---------read about
+ map,filter, reduce and all.
+ ---------read about what it does------- 
+ const countryName = new URLSearchParams(location.search).get('name')
+
+think about how to replace the var with localStorage
+
+
+
+ height:51.6875px
+ width:252px
+
+
+
+
+
+
+
+ --------------------------------------------
+logic building:-
+number of scenarios for
+
+in home page:-
+                      -filter on - region(global)
+-search - suggestions           
+                      -filter off - global
+
+                      -filter  on  - region(global)
+-filter- page render
+                      -filter  off - global
+
+                      -filter  on  - region(global)
+-change page- page render
+                      -filter  off - global
+
+after submit page :-
+                      -filter on  - region(global)
+-search  - suggestions            
+                      -filter off - global
+-filter
+-change page
+
+
+
+
+
+
+
+
+
+
+
+
+
+

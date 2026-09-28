@@ -1,0 +1,456 @@
+:root {
+  /* --Dark-Blue: ;
+  --Very-Dark-Blue: hsl(207, 26%, 17%);
+  --Very-Dark-Blue: hsl(200, 15%, 8%);
+  --Dark-Gray: hsl(0, 0%, 52%); */
+  /* --Black: hsl(0, 0%, 0%); //i have used inherent in the place of this, works fine. */
+  --Box-shadow: 0px 0px 12px -7px #00000042;
+  --Medium-font: 1.33rem;
+  --Border-radius-1: 0.51em;
+  --Border-radius-2: 0.25em;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 12px;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: unset;
+}
+body {
+  --Text-Color: black;
+  --Background-Color: hsl(0, 0%, 98%);
+  --Primary-Color: hsl(0, 0%, 100%);
+  font-family: 'Nunito Sans', serif;
+  background-color: var(--Background-Color);
+  color: var(--Text-Color);
+}
+.dark-mode {
+  --Text-Color: white;
+  --Background-Color: hsl(207, 26%, 17%);
+  --Primary-Color: hsl(209, 23%, 22%);
+}
+div,
+i,
+p,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+span {
+  font-weight: 300;
+}
+p {
+  font-weight: 600;
+}
+h1 {
+  font-weight: 800;
+}
+img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.design {
+  margin-top: 3em;
+}
+.--hover-focus-effect-transition {
+  transition: color 0.2s ease-in-out;
+}
+.cursor--not-allowed {
+  cursor: not-allowed;
+}
+.container--1440px {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+/* -------------------- */
+/* flex region. */
+.--d-flex {
+  display: flex;
+}
+.--d-flex--flex-direction--col {
+  flex-direction: column;
+}
+.--d-flex--align-center {
+  align-items: center;
+}
+.--d-flex--align-baseline {
+  align-items: baseline;
+}
+.--d-flex--space-between {
+  justify-content: space-between;
+}
+.--d-flex--space-around {
+  justify-content: space-around;
+}
+.--d-flex--wrap {
+  flex-wrap: wrap;
+}
+
+/* -------------------- */
+
+.navigation--container {
+  background-color: var(--Primary-Color);
+  box-shadow: var(--Box-shadow);
+}
+
+nav {
+  padding: 2.6em 1.5em;
+}
+
+.nav__title {
+  font-size: 1.5rem;
+}
+
+.nav__theme-changer {
+  cursor: pointer;
+}
+.nav__theme-changer-icon {
+  transform: rotate(-30deg);
+  margin: 0 1em 0 0;
+  font-family: 'Font Awesome 6 Free';
+}
+
+.nav__theme-changer-text {
+  font-size: 1.23rem;
+}
+
+main {
+  padding: 1.5em;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 300;
+  font-size: var(--Medium-font);
+  padding: 0.6em 1.7em;
+  background-color: var(--Primary-Color);
+  border-radius: var(--Border-radius-2);
+  box-shadow: var(--Box-shadow);
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+.btn:hover,
+.btn:focus {
+  transform: scale(1.03);
+}
+.btn i {
+  margin: 0 0.5em 0 0;
+}
+
+/* .btn i:hover,
+    .btn i:focus {
+      transform: rotate(45deg);
+    } 
+    do this later  
+    */
+
+.section1 {
+  column-gap: 2px;
+}
+.search-bar--container {
+  position: relative;
+  margin: 0.5em 0 3em 0;
+  width: 100%;
+}
+.search-bar {
+  width: 100%;
+  background-color: var(--Primary-Color);
+  border-radius: var(--Border-radius-1);
+  padding: 0 0em 0 1.5em;
+  box-shadow: var(--Box-shadow);
+  overflow: hidden;
+  transition: border-radius 0.1s ease-out;
+}
+.search-bar--activated {
+  border-radius: var(--Border-radius-1) var(--Border-radius-1) 0 0;
+}
+.search-bar__button {
+  background-color: unset;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.9em;
+  color: #bbb8b8;
+  margin: 0 0.5em 0 0;
+}
+.search-bar__button--hover {
+  color: inherit;
+}
+.search-bar__button--activated {
+  color: unset;
+}
+
+.search-bar__input {
+  /* why i added padding in here, because in the form also i could have added it well because of the padding when the user get anywhere near the element it will respond else user need to be pointing straight at it.(changed it later as with d-flex there is no need for that.) */
+  border: unset;
+  font-size: var(--Medium-font);
+  cursor: text;
+  width: 100%;
+  font-family: 'Nunito Sans', serif;
+  background-color: var(--Primary-Color);
+  color: var(--Text-Color);
+}
+.search-bar__input::placeholder {
+  color: #bbb8b8;
+}
+.search-bar-suggestion__list {
+  background-color: var(--Primary-Color);
+  font-size: var(--Medium-font);
+  box-shadow: var(--Box-shadow);
+  border-radius: 0 0 var(--Border-radius-1) var(--Border-radius-1);
+  width: 100%;
+  position: absolute;
+  transition: opacity 0.1s ease-in-out;
+  opacity: 0%;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+.search-bar-suggestion__list-option {
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  display: block;
+}
+.search-bar-suggestion__list-option + .search-bar-suggestion__list-option {
+  border-top: 0.15em solid var(--Background-Color);
+}
+
+.search-bar-suggestion__list-option:hover,
+.search-bar-suggestion__list-option:focus {
+  background-color: var(--Background-Color);
+  /* background: green; */
+}
+.filter-toggle--container {
+  width: 60%;
+  position: relative;
+}
+.search-bar-suggestion__list--activated {
+  opacity: 100%;
+  pointer-events: unset;
+  border-top: 0.2em solid var(--Text-Color);
+  transition: border 0.05s linear;
+}
+.filter-toggle {
+  background-color: var(--Primary-Color);
+  padding: 0.4em 0.8em 0.4em 1.101em;
+  font-size: var(--Medium-font);
+  box-shadow: var(--Box-shadow);
+  border-radius: var(--Border-radius-1);
+  margin: 0 0 0.3em 0;
+  border-left: 0px solid;
+  transition: border 0.1s ease-in-out;
+}
+.filter-toggle--border-left-activated {
+  border-left: 3em solid;
+}
+.filter-toggle__close-button {
+  position: absolute;
+  left: 2.33%;
+  color: var(--Primary-Color);
+  transform: scale(1.5);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  cursor: pointer;
+  padding: 0.4em;
+  top: 28%;
+}
+
+.filter-toggle__close-button--activated {
+  display: block;
+  opacity: 100%;
+  pointer-events: all;
+}
+.filter-toggle__caret {
+  display: inline-block;
+  align-self: center;
+  padding: 1em;
+  transition: transform 0.15s ease-in-out;
+  cursor: pointer;
+}
+.filter-toggle__caret--open {
+  transform: rotate(180deg);
+}
+
+.filter-toggle__list {
+  background-color: var(--Primary-Color);
+  font-size: var(--Medium-font);
+  /* list-style-type: none; */
+  box-shadow: var(--Box-shadow);
+  border-radius: var(--Border-radius-1);
+  width: 100%;
+  padding: 1em 0em;
+  position: absolute;
+  transform: translateY(-5px);
+  transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+  opacity: 0%;
+  pointer-events: none;
+  z-index: 100;
+}
+.filter-toggle__list--activated {
+  opacity: 100%;
+  transform: translateY(0px);
+  pointer-events: auto;
+}
+
+.filter-toggle__list *:hover,
+.filter-toggle__list *:focus {
+  background-color: var(--Background-Color);
+}
+.filter-toggle__list * {
+  padding: 0.2em 1.2em;
+  cursor: pointer;
+}
+.countries-card--container {
+  margin: 2em 0 0 0em;
+  gap: 3em;
+}
+.country-card {
+  display: block;
+  max-width: 256px;
+  border-radius: var(--Border-radius-1);
+  overflow: auto;
+  box-shadow: var(--Box-shadow);
+  background-color: var(--Primary-Color);
+  /* margin: 0 auto; */
+  transition: transform 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  word-break: break-all;
+}
+.country-card:hover,
+.country-card:focus {
+  transform: scale(1.04);
+  box-shadow: 0px 0px 20px -8px #00000042;
+}
+
+.country-card__information {
+  padding: 1.6em 1.6em 3em 1.6em;
+}
+.country-card__information h1 {
+  padding: 0 0 0.63em 0;
+}
+.country-card__information p {
+  padding: 0.2em 0;
+  font-size: var(--Medium-font);
+}
+/* --------- */
+.not-found-404 {
+  width: 100%;
+  height: 50vh;
+  justify-content: center;
+  position: relative;
+  gap: 2em;
+}
+.not-found-404 h1 {
+  font-size: clamp(14rem, 26vw, 24rem);
+  color: var(--Text-Color);
+  opacity: 10%;
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+.not-found-404__text {
+  text-align: center;
+  font-size: 1.5em;
+}
+.not-found__btn {
+  border-radius: var(--Border-radius-1);
+  font-weight: 600;
+}
+.countries-card--container {
+  justify-content: center;
+}
+
+footer {
+  padding: 2em 0 0 0;
+}
+.pagination-container {
+  margin: auto;
+  width: min(483px, 82%);
+  gap: 1em;
+  justify-content: center;
+}
+.pagination__number-btn-container {
+  gap: 1em;
+}
+.pagination__btn {
+  display: inline-block;
+  padding: 0.5em 0;
+  background-color: var(--Primary-Color);
+  border-radius: var(--Border-radius-2);
+  font-weight: 700;
+  width: 2.4em;
+  text-align: center;
+  box-shadow: var(--Box-shadow);
+  transition: all 0.05s linear;
+  user-select: none;
+}
+.pagination__btn:hover {
+  outline: 0.15em solid var(--Text-Color);
+}
+/* .pagination__btn:hover {
+  transform: scale(1.02);
+} */
+
+@media (min-width: 800px) {
+  :root {
+    --Medium-font: 0.9rem;
+  }
+  html {
+    font-size: 16px;
+  }
+  nav {
+    padding: 1.5em 4.5em;
+  }
+  .nav__theme-changer-text {
+    font-size: 1rem;
+  }
+  .search-bar__button {
+    font-size: 1.1em;
+  }
+  .search-bar__button--activated {
+    color: inherit;
+  }
+  .filter-toggle--container {
+    max-width: 252px;
+  }
+
+  .search-bar--container {
+    max-width: 420px;
+  }
+  .filter-toggle__close-button {
+    top: 24%;
+    left: 3.45%;
+  }
+
+  main {
+    padding: 1.5em 4.5em 1.5em 4.5em;
+  }
+  .countries-card--container {
+    justify-content: space-between;
+  }
+  .country-card {
+    margin: unset;
+  }
+  .country-card__information {
+    padding: 1.4em 1.4em 2.4em 1.4em;
+  }
+  .country-card__information p {
+    padding: 0.1em 0;
+  }
+  .country-card__information h1 {
+    padding: 0 0 0.65em 0;
+    font-size: 1.1rem;
+  }
+}
